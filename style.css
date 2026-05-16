@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+#loadingAnimation {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    background: url('cube-animation.gif') no-repeat center center;
+    background-size: contain;
+    animation: fadeOut 3s ease-out 2s forwards;
+}

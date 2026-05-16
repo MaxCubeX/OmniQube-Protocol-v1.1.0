@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Encryption</title>
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(() => console.log('Service Worker зарегистрирован'))
+                .catch(error => console.error('Ошибка регистрации SW:', error));
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to PWA App</h1>
+    <script>
+        fetch('data/encrypted_link.txt')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Encrypted Link:', data.encrypted_link);
+            });
+    </script>
+</body>
+</html>
